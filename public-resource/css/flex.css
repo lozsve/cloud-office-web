@@ -1,0 +1,28 @@
+.flex_Level_VerticalCenter {
+  display: flex;
+  align-items: center;
+}
+
+.flex_LevelVertical_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex_Level_VerticalCenter_sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex_Vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_Vertical_LevelCenter_sb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

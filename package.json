@@ -1,0 +1,30 @@
+{
+  "name": "cloud-office-web",
+  "version": "1.0.0",
+  "description": "online intelligent office system",
+  "scripts": {
+    "install:am": "cd admin-manage && yarn",
+    "install:ma": "cd main-app && yarn",
+    "install:mo": "cd market-operation && yarn",
+    "install:ps": "cd panel-screen && yarn",
+    "install:pd": "cd product-develop && yarn",
+    "install-all": "npm-run-all --parallel install:*",
+    "dev:am": "cd admin-manage && yarn dev",
+    "dev:ma": "cd main-app && yarn dev",
+    "dev:mo": "cd market-operation && yarn dev",
+    "dev:ps": "cd panel-screen && yarn dev",
+    "dev:pd": "cd product-develop && yarn dev",
+    "dev-all": "npm-run-all --parallel dev:*",
+    "build:am": "cd admin-manage && yarn build",
+    "build:ma": "cd main-app && yarn build",
+    "build:mo": "cd market-operation && yarn build",
+    "build:ps": "cd panel-screen && yarn build",
+    "build:pd": "cd product-develop && yarn build",
+    "build-all": "npm-run-all --parallel build:*"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "author": "lozsve",
+  "license": "ISC"
+}

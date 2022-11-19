@@ -1,0 +1,125 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  min-width: $minWidth;
+  min-height: $minHeight;
+
+  .el-header {
+    height: $headerHeight;
+    background-color: #262e4d;
+    color: #ffffff;
+
+    .logo_img {
+      width: 270px;
+      height: 70%;
+      background-color: rgba($color: #50597c, $alpha: 0.3);
+      border-radius: 8px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .tabs_box {
+      flex: 1;
+      height: 100%;
+      margin: 0 18px;
+
+      .tab_item {
+        height: 100%;
+        padding: 0 12px;
+        cursor: pointer;
+
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+
+    .panel_entry {
+      border: 1px solid #ffffff;
+      padding: 6px 24px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+      }
+
+      &:active {
+        background-color: rgba($color: $primaryColor, $alpha: 0.2);
+      }
+    }
+
+    .iconfont {
+      font-size: 26px;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+
+    .news_icon {
+      margin: 0 10px 0 20px;
+      position: relative;
+      transition: all 0.3s;
+
+      &:active {
+        transform: scale(0.8);
+      }
+
+      span {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
+
+    .add_icon {
+      margin: 0 20px 0 10px;
+    }
+
+    .el-dropdown {
+      height: 80%;
+      color: #ffffff;
+      cursor: pointer;
+
+      .el-icon {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .el-scrollbar {
+    height: calc(100vh - $headerHeight);
+    min-height: calc($minHeight - $headerHeight);
+
+    &:nth-of-type(1) {
+      background-color: #ffffff;
+    }
+
+    &:nth-of-type(2) {
+      background-color: #f8f8f8;
+    }
+  }
+
+  .el-aside {
+    width: $asideWidth;
+
+    .el-menu {
+      border: 0;
+    }
+  }
+
+  .el-main {
+    width: calc(100vw - $asideWidth);
+    min-width: calc($minWidth - $asideWidth);
+  }
+}

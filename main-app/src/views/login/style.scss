@@ -1,0 +1,147 @@
+.bg_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: $minWidth;
+  min-height: $minHeight;
+}
+
+.container {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  min-width: $minWidth;
+  min-height: $minHeight;
+  padding: 50px;
+  color: #ffffff;
+  position: relative;
+
+  .left_box {
+    width: 50%;
+    height: 100%;
+    position: relative;
+
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 54px;
+
+      span {
+        font-size: 24px;
+        position: relative;
+        top: -24px;
+        left: 10px;
+        color: #d21f08;
+      }
+    }
+
+    .text p:nth-of-type(1) {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .text p:nth-of-type(2) {
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 6px;
+    }
+  }
+
+  .right_box {
+    width: 50%;
+    height: 100%;
+
+    .form_box {
+      width: 400px;
+      height: 400px;
+      background: rgba($color: #ffffff, $alpha: 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: $borderRadius;
+      position: relative;
+      color: #333333;
+      padding: 30px;
+
+      .icon_img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        cursor: pointer;
+      }
+
+      .type_text {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      ::v-deep(.el-form) {
+        width: 100%;
+
+        .input_box {
+          width: 100%;
+          border-bottom: 1px solid #333333;
+
+          .iconfont {
+            font-size: 44px;
+            margin-right: 20px;
+          }
+
+          .el-form-item {
+            flex: 1;
+
+            .el-input {
+              width: 100%;
+              height: 44px;
+              margin-top: 20px;
+
+              .el-input__wrapper {
+                box-shadow: none;
+                padding: 0;
+                background-color: transparent;
+
+                .el-input__inner {
+                  height: 100%;
+                  font-size: 22px;
+                  letter-spacing: 2px;
+
+                  &::-webkit-input-placeholder {
+                    font-size: 18px;
+                  }
+                }
+
+                .el-input__clear,
+                .el-input__password {
+                  font-size: 24px;
+                  margin-left: 20px;
+                }
+              }
+            }
+          }
+        }
+
+        .text_box {
+          margin: 10px 0 40px;
+
+          span {
+            color: $primaryColor;
+          }
+
+          .forgot_password {
+            color: $primaryColor;
+            cursor: pointer;
+          }
+        }
+
+        .el-button {
+          width: 100%;
+          height: 50px;
+          font-size: 20px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
