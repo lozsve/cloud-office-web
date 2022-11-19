@@ -15,8 +15,9 @@
 
 #### 应用说明
 
-- 0.  main-app 主应用（公共部分）
-- 1.  admin-manage 子应用（行政管理）
-- 2.  market-operation 子应用（市场运维）
-- 3.  panel-screen 子应用（展板大屏）
-- 4.  product-develop 子应用（产品研发）
+- main-app 主应用（公共部分）
+- admin-manage 子应用（行政管理）
+- market-operation 子应用（市场运维）
+- panel-screen 子应用（展板大屏）
+- product-develop 子应用（产品研发）
+- public-resource 公共资源文件
