@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "element-plus": "^2.2.21",
+    "pinia": "^2.0.24",
+    "pinia-plugin-persistedstate": "^2.4.0",
     "qiankun": "^2.8.4",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

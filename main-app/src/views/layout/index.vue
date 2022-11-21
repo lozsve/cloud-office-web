@@ -1,19 +1,16 @@
 <template>
-  <el-container class="container">
+  <el-container v-if="!isOpenWindow" class="container">
     <el-header class="flex_Level_VerticalCenter">
       <div class="logo_img flex_LevelVertical_center">智慧云办公系统</div>
       <div class="tabs_box flex_LevelVertical_center">
         <div class="tab_item flex_LevelVertical_center" v-for="(item, index) in tabList" :key="index">{{ item }}</div>
       </div>
-      <div class="panel_entry">数字驾驶舱</div>
+      <div class="panel_entry" @click="goBanel">数字驾驶舱</div>
       <div class="news_icon iconfont icon-xiaoxi"><span></span></div>
       <el-dropdown>
         <div class="add_icon iconfont icon-jiahao flex_Level_VerticalCenter"></div>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>新建任务</el-dropdown-item>
-            <el-dropdown-item>新建任务</el-dropdown-item>
-            <el-dropdown-item>新建任务</el-dropdown-item>
             <el-dropdown-item>新建任务</el-dropdown-item>
             <el-dropdown-item>新建任务</el-dropdown-item>
           </el-dropdown-menu>
@@ -46,12 +43,6 @@
             <el-menu-item :index="'/marketOperation/b'">
               <template #title>marketOperation</template>
             </el-menu-item>
-            <el-menu-item :index="'/panelScreen/a'">
-              <template #title>panelScreen</template>
-            </el-menu-item>
-            <el-menu-item :index="'/panelScreen/b'">
-              <template #title>panelScreen</template>
-            </el-menu-item>
             <el-menu-item :index="'/productDevelop/a'">
               <template #title>productDevelop</template>
             </el-menu-item>
@@ -64,20 +55,37 @@
       <el-scrollbar>
         <el-main>
           <router-view></router-view>
-          <div id="iframe"></div>
+          <div id="iframeApp"></div>
         </el-main>
       </el-scrollbar>
     </el-container>
   </el-container>
+  <div id="windowApp"></div>
 </template>
 
 <script setup lang="ts">
 import { startQinakun } from '@/micro'
 import { ArrowDown } from '@element-plus/icons-vue'
+const router = useRouter()
 
-onMounted(() => startQinakun())
+onMounted(() => {
+  startQinakun()
+  getNowPath()
+})
 
+// 获取当前页面路由判断是否为打开新窗口
+const isOpenWindow = ref<boolean>(false)
+const getNowPath = () => {
+  isOpenWindow.value = [ '/panelScreen/a' ].includes(router.currentRoute.value.fullPath) ? true : false
+}
+
+// 功能模块
 const tabList = [ '应用中心', '任务大厅', '工云空间', '规章制度', '系统配置' ]
+
+// 跳转大屏（打开新窗口）
+const goBanel = () => {
+  window.open('/panelScreen/a', '_blank')
+}
 
 // 下拉菜单
 const handleCommand = (command: string) => {

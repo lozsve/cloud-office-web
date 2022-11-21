@@ -12,10 +12,15 @@ const getLocation = (port: string, base: string) => {
 }
 
 // 导出子应用配置
-const appList: arrayType = [ 'AM', 'MO', 'PS', 'PD' ]
-export const microApp: arrayType = appList.map((item: string) => ({
-  name: env[`VITE_APP_${item}_NAME`],
-  entry: getLocation(env[`VITE_APP_${item}_PORT`], env[`VITE_APP_${item}_BASE`]),
-  container: '#iframe',
-  activeRule: '/' + env[`VITE_APP_${item}_NAME`]
+const appList: arrayType = [
+  { name: 'AM', id: '#iframeApp' },
+  { name: 'MO', id: '#iframeApp' },
+  { name: 'PS', id: '#windowApp' },
+  { name: 'PD', id: '#iframeApp' }
+]
+export const microApp: arrayType = appList.map((item: objectType) => ({
+  name: env[`VITE_APP_${item.name}_NAME`],
+  entry: getLocation(env[`VITE_APP_${item.name}_PORT`], env[`VITE_APP_${item.name}_BASE`]),
+  container: item.id,
+  activeRule: '/' + env[`VITE_APP_${item.name}_NAME`]
 }))
